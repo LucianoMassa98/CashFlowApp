@@ -61,6 +61,7 @@ const remove= ()=>{
   background-color: #e6f9ff;
   border-radius: 8px;
   box-sizing: border-box;
+  height: 40px;
 }
 .movement .content {
   width: 100%;
