@@ -3,9 +3,13 @@
         <h2 class="title">Historial</h2>
         <div class="content">
             <Movement 
-                v-for="movement in movements" 
-                :key="movement.id" 
-                :title="movement.title"    
+                v-for="{id, title, description, amount} in movements" 
+                :key="id" 
+                :id="id"
+                :title="title"
+                :description="description"
+                :amount="amount"
+                @remove="remove"    
             />
             
         </div>
@@ -13,7 +17,7 @@
 </template>
 
 <script setup>
-import {toRefs, defineProps} from 'vue';
+import {toRefs, defineProps, defineEmits} from 'vue';
 import Movement from "./Movement.vue";
 const props = defineProps({
     movements: {
@@ -22,6 +26,13 @@ const props = defineProps({
     }
 });
 const {movements} = toRefs(props);
+
+const emit = defineEmits(["remove"]);
+
+const remove = (id)=>{
+  console.log("remove",id);
+  emit("remove",id);
+};
 </script>
 
 <style scoped>

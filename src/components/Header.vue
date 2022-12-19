@@ -27,8 +27,7 @@ header {
   justify-content: space-around;
   align-items: center;
   width: 100vw;
-  background-color: #e5e5e5;
-  top: 0;
+    
 }
 img,
 span {
